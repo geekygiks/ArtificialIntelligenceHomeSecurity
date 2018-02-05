@@ -1,0 +1,37 @@
+#!/bin/bash
+if [ $1 == "--help" ]
+then
+	echo "Command line usage !!"
+	echo "====================="
+
+	echo "./monitoring Current_Directory_Path "
+
+else
+	SecurityHome=$1
+	cd ${SecurityHome}/
+	if [ -f scripts/capture_module/dist/capture_module/capture.zip ]
+	then
+		echo "Extracting the files !!"
+		echo "+++++++++++++++++++++++"
+		unzip -q scripts/capture_module/dist/capture_module/capture.zip -d scripts/capture_module/dist/capture_module/
+	fi
+
+	if [ -f scripts/label_image/dist/label_image/label.zip ]
+	then
+		unzip -q scripts/label_image/dist/label_image/label.zip -d scripts/label_image/dist/label_image/
+		echo "Extracted !!"
+		echo "++++++++++++"
+	fi
+
+	echo "Initiating the Camera !!"
+        echo "======================="
+	nohup ${SecurityHome}/scripts/capture_module/dist/capture_module/capture_module > tmp/capture 2>&1 &
+	sleep 5
+	echo "Initiating the Main Module !!"
+	echo "============================="
+	nohup ${SecurityHome}/scripts/label_image/dist/label_image/label_image --graph=${SecurityHome}/tf_files/retrained_graph.pb --image=${SecurityHome}/tf_files/croppedimage.jpg > tmp/label 2>&1 &
+	sleep 2
+	nohup ${SecurityHome}/main.sh > tmp/outscript  2>&1 &
+	sleep 1
+	echo "Done !!"
+fi

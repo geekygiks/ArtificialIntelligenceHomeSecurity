@@ -1,0 +1,35 @@
+2018-02-05 21:32:51.875726: I tensorflow/core/platform/cpu_feature_guard.cc:137] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2
+2018-02-05 21:32:52.371873: W tensorflow/core/framework/op_kernel.cc:1198] Not found: tf_files/croppedimage.jpg; No such file or directory
+2018-02-05 21:32:52.388133: W tensorflow/core/framework/op_kernel.cc:1198] Not found: tf_files/croppedimage.jpg; No such file or directory
+[9895] Failed to execute script label_image
+Traceback (most recent call last):
+  File "tensorflow/python/client/session.py", line 1350, in _do_call
+  File "tensorflow/python/client/session.py", line 1329, in _run_fn
+  File "tensorflow/python/framework/errors_impl.py", line 473, in __exit__
+tensorflow.python.framework.errors_impl.NotFoundError: tf_files/croppedimage.jpg; No such file or directory
+	 [[Node: file_reader = ReadFile[_device="/job:localhost/replica:0/task:0/device:CPU:0"](file_reader/filename)]]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "label_image.py", line 111, in <module>
+  File "label_image.py", line 52, in read_tensor_from_image_file
+  File "tensorflow/python/client/session.py", line 895, in run
+  File "tensorflow/python/client/session.py", line 1128, in _run
+  File "tensorflow/python/client/session.py", line 1344, in _do_run
+  File "tensorflow/python/client/session.py", line 1363, in _do_call
+tensorflow.python.framework.errors_impl.NotFoundError: tf_files/croppedimage.jpg; No such file or directory
+	 [[Node: file_reader = ReadFile[_device="/job:localhost/replica:0/task:0/device:CPU:0"](file_reader/filename)]]
+
+Caused by op 'file_reader', defined at:
+  File "label_image.py", line 111, in <module>
+  File "label_image.py", line 44, in read_tensor_from_image_file
+  File "tensorflow/python/ops/gen_io_ops.py", line 381, in read_file
+  File "tensorflow/python/framework/op_def_library.py", line 787, in _apply_op_helper
+  File "tensorflow/python/framework/ops.py", line 3160, in create_op
+  File "tensorflow/python/framework/ops.py", line 1625, in __init__
+
+NotFoundError (see above for traceback): tf_files/croppedimage.jpg; No such file or directory
+	 [[Node: file_reader = ReadFile[_device="/job:localhost/replica:0/task:0/device:CPU:0"](file_reader/filename)]]
+
+tf_files/croppedimage.jpg

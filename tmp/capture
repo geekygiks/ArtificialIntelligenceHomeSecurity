@@ -1,0 +1,4 @@
+[9888] Failed to execute script capture_module
+Traceback (most recent call last):
+  File "capture_module.py", line 14, in <module>
+SystemError: Cannot identify '/dev/video0': 2, No such file or directory
