@@ -1,6 +1,6 @@
 # DeepLearningHomeSecurity
 Home Security software designed based on Deep Learning architecture using widely used opensource tensorflow platform.
-It has been tested on ubuntu 15.04/17.10 OS on AMD64 and ARM architecture. The software is distributed under 
+It has been tested on ubuntu 15.04/16.04 OS on AMD64 and ARM architecture. The software is distributed under 
 APACHE licence (see licence). 
 
 The standalone binary executable requires minimal external dependencies as the libraries such as tensorflow, openCV, pygame and others 
@@ -27,5 +27,5 @@ Usage:
                 
                 Output image is generated in "sendemail/" directory
 
-The download files is approx 185 MB, it may take a while. Pl. feel free to raise an issue if you face any problem. 
+The download file is approx 185 MB, it may take a while. Pl. feel free to raise an issue if you face any problem. 
 
