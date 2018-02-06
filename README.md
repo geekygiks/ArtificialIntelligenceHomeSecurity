@@ -17,7 +17,7 @@ Usage:
   
   b). After wards pass the following in your terminal
   
-                $./monitor {/path/to/current/directory}
+                $./monitoring {/path/to/current/directory}
   
                 Initiating the Camera !!
                 =======================
